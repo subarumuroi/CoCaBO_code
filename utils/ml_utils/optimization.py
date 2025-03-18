@@ -198,8 +198,11 @@ def sample_then_minimize(
         best_f = np.inf
         for ii in range(num_local):
             x0 = np.atleast_2d(x_locals[ii])
+            print(x0)
+            print(x0[0])
+            print()
             res = sp.optimize.minimize(
-                optimiser_func, x0, jac=jac,
+                optimiser_func, x0[0], jac=jac,
                 bounds=bounds,
                 options=minimize_options)  # type: optimize.OptimizeResult
 
